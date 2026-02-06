@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mind Reader Quest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="title">
+        <span class="orb" aria-hidden="true"></span>
+        <div>
+          <h1>Mind Reader Quest</h1>
+          <p>Think of a real or fictional character. I will try to guess them.</p>
+        </div>
+      </div>
+      <button id="reset" class="ghost">Start Over</button>
+    </header>
+
+    <section class="arena">
+      <div class="avatar">
+        <div class="halo"></div>
+        <div class="face">
+          <div class="eyes">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+      <div class="prompt">
+        <h2 id="question">Loading your first question...</h2>
+        <p id="confidence" class="confidence">Confidence: 0%</p>
+        <div class="progress">
+          <div id="progress-bar"></div>
+        </div>
+        <div class="choices" role="group" aria-label="Answer choices">
+          <button class="choice" data-answer="yes">Yes</button>
+          <button class="choice" data-answer="no">No</button>
+          <button class="choice" data-answer="maybe">Maybe</button>
+          <button class="choice" data-answer="unknown">I don't know</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="result" id="result" hidden>
+      <div class="card">
+        <h2 id="result-title">I have a guess!</h2>
+        <p id="result-body"></p>
+        <div class="result-actions">
+          <button id="correct" class="primary">You got it!</button>
+          <button id="incorrect" class="ghost">Nope, try again</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="history">
+      <h3>Answer Trail</h3>
+      <ul id="history-list"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
